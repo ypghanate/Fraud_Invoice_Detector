@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RiskFlow AI - Invoice Ledger</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>RiskFlow AI Dashboard</h1>
+            <p>Submit vendor invoices for automated risk scoring and settlement.</p>
+        </header>
+
+        <div id="errorText" class="error-banner"></div>
+
+        <section class="card">
+            <h2>New Invoice Submission</h2>
+            <form id="invoice-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="vendor_nameBox">Vendor Name</label>
+                        <input type="text" id="vendor_nameBox" placeholder="e.g. Acme Corp" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tax_idBox">Tax ID</label>
+                        <input type="text" id="tax_idBox" placeholder="e.g. US-9876543" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Invoice Amount ($)</label>
+                        <input type="number" id="amount" step="0.01" placeholder="0.00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="vendor_wallet_addressBox">Vendor Wallet Address (Web3)</label>
+                        <input type="text" id="vendor_wallet_addressBox" placeholder="0x..." required>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="descriptionBox">Line Item Description</label>
+                    <textarea id="descriptionBox" rows="3" placeholder="Describe goods or services rendered..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn">Submit Invoice</button>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Invoice Ledger</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Vendor</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
