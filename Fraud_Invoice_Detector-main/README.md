@@ -72,11 +72,9 @@ A full-stack invoice submission application with **ML-based fraud scoring** — 
        │ DistilBERT Model │
        └──────────────────┘
 
----
+## Tech Stack
 
-# Tech Stack
-
-## Frontend
+### Frontend
 
 - **HTML5**
 - **CSS3**
@@ -86,9 +84,7 @@ A full-stack invoice submission application with **ML-based fraud scoring** — 
 
 The frontend communicates with the Node.js backend using REST API requests.
 
----
-
-## Backend / API
+### Backend / API
 
 - **Node.js v18+**
 - **Express.js**
@@ -97,22 +93,11 @@ The frontend communicates with the Node.js backend using REST API requests.
 - RESTful API architecture
 - Parameterized SQL queries
 
-Node.js is responsible for:
-
-- Receiving invoice submissions
-- Validating user input
-- Persisting invoice records
-- Communicating with the ML microservice
-- Returning the combined invoice and fraud analysis
-- Serving the frontend application
-
----
-
-## Database
+### Database
 
 The application uses **MySQL** for persistent invoice storage.
 
-### Database Schema
+#### Database Schema
 
 ```sql
 CREATE TABLE invoices (
@@ -125,6 +110,7 @@ CREATE TABLE invoices (
     status VARCHAR(50) DEFAULT 'pending',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 
 # Hyperparameter Optimisation
 
